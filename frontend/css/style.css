@@ -96,9 +96,10 @@ html, body {
 }
 .three-dots-btn:hover { background: var(--border-color); transform: scale(1.05); }
 .three-dots-dropdown {
-  position: absolute; top: 100%; right: 0; margin-top: 0.5rem; width: 230px;
+  position: absolute; top: 100%; left: 0; right: auto; margin-top: 0.5rem; width: 260px;
+  max-height: 80vh; overflow-y: auto;
   background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-md);
-  box-shadow: var(--shadow-xl); z-index: 1000; display: none; overflow: hidden;
+  box-shadow: var(--shadow-xl); z-index: 1000; display: none;
   animation: fadeInDown 0.2s ease forwards;
 }
 .three-dots-dropdown.show { display: block; }
@@ -109,6 +110,7 @@ html, body {
 .dropdown-header {
   padding: 0.5rem 0.85rem; font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
   letter-spacing: 0.04em; color: var(--text-muted); background: var(--bg-card-subtle); border-bottom: 1px solid var(--border-subtle);
+  position: sticky; top: 0; z-index: 2;
 }
 .dropdown-item {
   width: 100%; padding: 0.6rem 0.85rem; font-size: 0.8rem; font-weight: 600; color: var(--text-primary);
@@ -116,7 +118,18 @@ html, body {
   display: flex; align-items: center; gap: 0.5rem; transition: background 0.15s ease; text-decoration: none;
 }
 .dropdown-item:hover { background: rgba(45, 70, 40, 0.08); color: var(--accent-forest); }
+.dropdown-item.active {
+  background: var(--bg-card-subtle);
+  color: var(--accent-forest);
+  font-weight: 700;
+  border-left: 3px solid var(--accent-forest);
+}
 body.dark-theme .dropdown-item:hover { background: rgba(255, 255, 255, 0.08); color: #7bc96e; }
+body.dark-theme .dropdown-item.active {
+  background: rgba(123, 201, 110, 0.15);
+  color: #7bc96e;
+  border-left: 3px solid #7bc96e;
+}
 .dropdown-divider { height: 1px; background: var(--border-subtle); margin: 0.2rem 0; }
 
 /* Horizontal Pill Navigation Bar */

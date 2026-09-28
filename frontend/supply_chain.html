@@ -15,23 +15,18 @@
 
   <header class="top-nav">
     <div class="nav-container">
-      <div class="brand-title">
-        <div class="brand-logo">NE</div>
-        <div class="brand-text">
-          <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
-          <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
-        </div>
-      </div>
-
-      <div class="nav-actions">
-        <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
-        <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
-        <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
-
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
         <div class="three-dots-container">
-          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="More Options">⋮</button>
+          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="Navigation Menu">☰</button>
           <div class="three-dots-dropdown" id="three-dots-dropdown">
-            <div class="dropdown-header">More Pages & Services</div>
+            <div class="dropdown-header">Navigation Modules</div>
+            <a href="index.html" class="dropdown-item">📊 Executive Dashboard</a>
+            <a href="Gis_map.html" class="dropdown-item">🗺️ GIS Map</a>
+            <a href="AI_Route_Optimizer.html" class="dropdown-item">🧠 AI Route Optimizer</a>
+            <a href="Live_fleet.html" class="dropdown-item">🚛 Live Fleet & ULIP</a>
+            <a href="supply_chain.html" class="dropdown-item active">🌾 Supply Chain & Spoilage</a>
+            <a href="Public_fund.html" class="dropdown-item">🏛️ Public Fund Governance</a>
+            <div class="dropdown-header">Services & Account</div>
             <a href="About_us.html" class="dropdown-item">ℹ️ About Us & Services</a>
             <a href="resource.html" class="dropdown-item">📑 Resources & Open Data</a>
             <a href="SOS.html" class="dropdown-item">📞 SOS</a>
@@ -39,43 +34,26 @@
             <a href="Setting.html" class="dropdown-item">⚙️ Setting</a>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="tabs-scroll-wrapper">
-      <div class="tabs-container">
-        <a href="index.html" class="tab-btn">📊 Executive Dashboard</a>
-        <a href="Gis_map.html" class="tab-btn">🗺️ GIS Map</a>
-        <a href="AI_Route_Optimizer.html" class="tab-btn">🧠 AI Route Optimizer</a>
-        <a href="Live_fleet.html" class="tab-btn">🚛 Live Fleet & ULIP</a>
-        <a href="supply_chain.html" class="tab-btn active">🌾 Supply Chain & Spoilage</a>
-        <a href="Public_fund.html" class="tab-btn">🏛️ Public Fund Governance</a>
+        <div class="brand-title">
+          <div class="brand-logo">NE</div>
+          <div class="brand-text">
+            <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
+            <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
+        <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
+        <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
       </div>
     </div>
   </header>
 
   <main class="main-wrapper">
     <section class="tab-pane active">
-      <!-- Supply Chain Telemetry KPI Strip -->
-      <div class="supply-kpi-grid">
-        <div class="supply-kpi-card">
-          <div class="supply-kpi-val">4,280 MT</div>
-          <div class="supply-kpi-lbl">Perishable Cargo Monitored</div>
-        </div>
-        <div class="supply-kpi-card">
-          <div class="supply-kpi-val">88.4%</div>
-          <div class="supply-kpi-lbl">Active Reefer Fleet Saturation</div>
-        </div>
-        <div class="supply-kpi-card">
-          <div class="supply-kpi-val">₹42.8 L</div>
-          <div class="supply-kpi-lbl">Spoilage Abated / Month</div>
-        </div>
-        <div class="supply-kpi-card">
-          <div class="supply-kpi-val">-3.4 Hrs</div>
-          <div class="supply-kpi-lbl">Avg Perishable Transit Time</div>
-        </div>
-      </div>
-
       <!-- High-Value GI Perishable Cargo Inventory Tracker -->
       <div class="glass-card" style="margin-bottom: 1.5rem;">
         <div class="card-header-title" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">

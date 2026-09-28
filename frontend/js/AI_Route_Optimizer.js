@@ -64,12 +64,13 @@ function updateOptimizationWeights() {
   const wSpoilage = document.getElementById('wSpoilageVal');
   const scoreBadge = document.getElementById('tuningScoreBadge');
 
-  const sliders = document.querySelectorAll('#aiRouterForm ~ .glass-card .range-slider-input');
-  // Reading sliders
-  const cVal = document.querySelectorAll('.range-slider-input')[0]?.value || 85;
-  const spVal = document.querySelectorAll('.range-slider-input')[1]?.value || 70;
-  const sfVal = document.querySelectorAll('.range-slider-input')[2]?.value || 95;
-  const spLVal = document.querySelectorAll('.range-slider-input')[3]?.value || 90;
+  const tuningContainer = scoreBadge ? scoreBadge.closest('.glass-card') : null;
+  const sliders = tuningContainer ? tuningContainer.querySelectorAll('.range-slider-input') : document.querySelectorAll('.range-slider-input');
+
+  const cVal = sliders[0]?.value || 85;
+  const spVal = sliders[1]?.value || 70;
+  const sfVal = sliders[2]?.value || 95;
+  const spLVal = sliders[3]?.value || 90;
 
   if (wCost) wCost.textContent = `${cVal}%`;
   if (wSpeed) wSpeed.textContent = `${spVal}%`;

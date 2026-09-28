@@ -3,6 +3,8 @@
    Page-specific logic for resource.html (Dataset downloads & API specifications)
    ============================================================================ */
 
+
+
 const API_PAYLOAD_SAMPLES = {
   'stgcn-risk': {
     "status": 200,
@@ -55,8 +57,10 @@ function loadApiPlaygroundPreview() {
   if (!select || !codeBox) return;
 
   const key = select.value;
-  const sample = API_PAYLOAD_SAMPLES[key] || API_PAYLOAD_SAMPLES['stgcn-risk'];
-  codeBox.textContent = JSON.stringify(sample, null, 2);
+  const sample = (typeof API_PAYLOAD_SAMPLES !== 'undefined' && API_PAYLOAD_SAMPLES[key]) || API_PAYLOAD_SAMPLES['stgcn-risk'];
+  if (sample) {
+    codeBox.textContent = JSON.stringify(sample, null, 2);
+  }
 }
 
 function executeApiPlaygroundCall() {

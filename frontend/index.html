@@ -19,23 +19,18 @@
   <!-- Top Navigation & Action Bar -->
   <header class="top-nav">
     <div class="nav-container">
-      <div class="brand-title">
-        <div class="brand-logo">NE</div>
-        <div class="brand-text">
-          <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
-          <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
-        </div>
-      </div>
-
-      <div class="nav-actions">
-        <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
-        <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
-        <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
-
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
         <div class="three-dots-container">
-          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="More Options">⋮</button>
+          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="Navigation Menu">☰</button>
           <div class="three-dots-dropdown" id="three-dots-dropdown">
-            <div class="dropdown-header">More Pages & Services</div>
+            <div class="dropdown-header">Navigation Modules</div>
+            <a href="index.html" class="dropdown-item active">📊 Executive Dashboard</a>
+            <a href="Gis_map.html" class="dropdown-item">🗺️ GIS Map</a>
+            <a href="AI_Route_Optimizer.html" class="dropdown-item">🧠 AI Route Optimizer</a>
+            <a href="Live_fleet.html" class="dropdown-item">🚛 Live Fleet & ULIP</a>
+            <a href="supply_chain.html" class="dropdown-item">🌾 Supply Chain & Spoilage</a>
+            <a href="Public_fund.html" class="dropdown-item">🏛️ Public Fund Governance</a>
+            <div class="dropdown-header">Services & Account</div>
             <a href="About_us.html" class="dropdown-item">ℹ️ About Us & Services</a>
             <a href="resource.html" class="dropdown-item">📑 Resources & Open Data</a>
             <a href="SOS.html" class="dropdown-item">📞 SOS</a>
@@ -43,18 +38,20 @@
             <a href="Setting.html" class="dropdown-item">⚙️ Setting</a>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Navigation Tabs -->
-    <div class="tabs-scroll-wrapper">
-      <div class="tabs-container">
-        <a href="index.html" class="tab-btn active">📊 Executive Dashboard</a>
-        <a href="Gis_map.html" class="tab-btn">🗺️ GIS Map</a>
-        <a href="AI_Route_Optimizer.html" class="tab-btn">🧠 AI Route Optimizer</a>
-        <a href="Live_fleet.html" class="tab-btn">🚛 Live Fleet & ULIP</a>
-        <a href="supply_chain.html" class="tab-btn">🌾 Supply Chain & Spoilage</a>
-        <a href="Public_fund.html" class="tab-btn">🏛️ Public Fund Governance</a>
+        <div class="brand-title">
+          <div class="brand-logo">NE</div>
+          <div class="brand-text">
+            <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
+            <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
+        <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
+        <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
       </div>
     </div>
   </header>
@@ -74,63 +71,9 @@
         </div>
       </div>
 
-      <!-- KPI Summary Grid -->
-      <div class="grid-4" style="margin-bottom: 1.25rem;">
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: #e0f2fe; color: #0284c7;">📈</div>
-          <div>
-            <div class="kpi-value">91.4%</div>
-            <div class="kpi-label">NER Accessibility Index</div>
-          </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: #fee2e2; color: #e11d48;">🚨</div>
-          <div>
-            <div class="kpi-value">3 Active</div>
-            <div class="kpi-label">Corridor Disruptions</div>
-          </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: #dcfce7; color: #16a34a;">🚚</div>
-          <div>
-            <div class="kpi-value">1,482 Units</div>
-            <div class="kpi-label">Live GPS Fleets</div>
-          </div>
-        </div>
-        <div class="kpi-card">
-          <div class="kpi-icon" style="background: #fef3c7; color: #d97706;">⚡</div>
-          <div>
-            <div class="kpi-value">94.8%</div>
-            <div class="kpi-label">Disaster Readiness</div>
-          </div>
-        </div>
-      </div>
+      
 
-      <!-- Regional Corridor Health Progress Meters -->
-      <div class="glass-card" style="margin-bottom: 1.5rem; padding: 0.85rem 1.25rem;">
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-size: 0.82rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.04em;">Regional Corridor Health Meters</strong>
-          <span style="font-size: 0.75rem; color: var(--accent-forest); font-weight: 700;">8 States Monitored</span>
-        </div>
-        <div class="corridor-health-bar">
-          <div class="corridor-item">
-            <div class="corridor-title"><span>Assam Belt</span> <span style="color: var(--accent-emerald);">92%</span></div>
-            <div class="mini-progress-bg"><div class="mini-progress-fill" style="width: 92%; background: var(--accent-emerald);"></div></div>
-          </div>
-          <div class="corridor-item">
-            <div class="corridor-title"><span>Meghalaya Pass</span> <span style="color: var(--accent-amber);">81%</span></div>
-            <div class="mini-progress-bg"><div class="mini-progress-fill" style="width: 81%; background: var(--accent-amber);"></div></div>
-          </div>
-          <div class="corridor-item">
-            <div class="corridor-title"><span>Arunachal Axis</span> <span style="color: var(--accent-sky);">74%</span></div>
-            <div class="mini-progress-bg"><div class="mini-progress-fill" style="width: 74%; background: var(--accent-sky);"></div></div>
-          </div>
-          <div class="corridor-item">
-            <div class="corridor-title"><span>Manipur Corridor</span> <span style="color: var(--accent-terracotta);">68%</span></div>
-            <div class="mini-progress-bg"><div class="mini-progress-fill" style="width: 68%; background: var(--accent-terracotta);"></div></div>
-          </div>
-        </div>
-      </div>
+     
 
       <!-- Emergency Multi-Modal Swap Engine Banner -->
       <div id="multiModalSwapBanner" style="display: none; margin-bottom: 1.5rem;"></div>

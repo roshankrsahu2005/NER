@@ -15,11 +15,32 @@
 
   <header class="top-nav">
     <div class="nav-container">
-      <div class="brand-title">
-        <div class="brand-logo">NE</div>
-        <div class="brand-text">
-          <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
-          <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <div class="three-dots-container">
+          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="Navigation Menu">☰</button>
+          <div class="three-dots-dropdown" id="three-dots-dropdown">
+            <div class="dropdown-header">Navigation Modules</div>
+            <a href="index.html" class="dropdown-item">📊 Executive Dashboard</a>
+            <a href="Gis_map.html" class="dropdown-item">🗺️ GIS Map</a>
+            <a href="AI_Route_Optimizer.html" class="dropdown-item">🧠 AI Route Optimizer</a>
+            <a href="Live_fleet.html" class="dropdown-item">🚛 Live Fleet & ULIP</a>
+            <a href="supply_chain.html" class="dropdown-item">🌾 Supply Chain & Spoilage</a>
+            <a href="Public_fund.html" class="dropdown-item">🏛️ Public Fund Governance</a>
+            <div class="dropdown-header">Services & Account</div>
+            <a href="About_us.html" class="dropdown-item active">ℹ️ About Us & Services</a>
+            <a href="resource.html" class="dropdown-item">📑 Resources & Open Data</a>
+            <a href="SOS.html" class="dropdown-item">📞 SOS</a>
+            <a href="Profile.html" class="dropdown-item">👤 Profile</a>
+            <a href="Setting.html" class="dropdown-item">⚙️ Setting</a>
+          </div>
+        </div>
+
+        <div class="brand-title">
+          <div class="brand-logo">NE</div>
+          <div class="brand-text">
+            <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
+            <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
+          </div>
         </div>
       </div>
 
@@ -27,29 +48,6 @@
         <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
         <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
         <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
-
-        <div class="three-dots-container">
-          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="More Options">⋮</button>
-          <div class="three-dots-dropdown" id="three-dots-dropdown">
-            <div class="dropdown-header">More Pages & Services</div>
-            <a href="About_us.html" class="dropdown-item">ℹ️ About Us & Services</a>
-            <a href="resource.html" class="dropdown-item">📑 Resources & Open Data</a>
-            <a href="SOS.html" class="dropdown-item">📞 SOS</a>
-            <a href="Profile.html" class="dropdown-item">👤 Profile</a>
-            <a href="Setting.html" class="dropdown-item">⚙️ Setting</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tabs-scroll-wrapper">
-      <div class="tabs-container">
-        <a href="index.html" class="tab-btn">📊 Executive Dashboard</a>
-        <a href="Gis_map.html" class="tab-btn">🗺️ GIS Map</a>
-        <a href="AI_Route_Optimizer.html" class="tab-btn">🧠 AI Route Optimizer</a>
-        <a href="Live_fleet.html" class="tab-btn">🚛 Live Fleet & ULIP</a>
-        <a href="supply_chain.html" class="tab-btn">🌾 Supply Chain & Spoilage</a>
-        <a href="Public_fund.html" class="tab-btn">🏛️ Public Fund Governance</a>
       </div>
     </div>
   </header>
@@ -187,143 +185,11 @@
         </div>
       </div>
 
-      <!-- ML Model Specifications & SLAs -->
-      <div class="grid-2" style="margin-bottom: 1.5rem;">
-        <div class="glass-card">
-          <div class="card-header-title">
-            <h3>📊 Machine Learning Model Benchmarks & SLAs</h3>
-          </div>
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.75rem;">
-            NE-AURA deploys edge-optimised ONNX models with strict real-time inference SLAs.
-          </p>
-          <div style="overflow-x: auto;">
-            <table class="table" style="width: 100%; font-size: 0.78rem;">
-              <thead>
-                <tr style="background: var(--bg-card-subtle);">
-                  <th>Model Name</th>
-                  <th>Architecture</th>
-                  <th>Inference SLA</th>
-                  <th>Benchmark Accuracy</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>ST-GCN Highway Risk</strong></td>
-                  <td>Spatio-Temporal Graph CNN</td>
-                  <td><span class="badge badge-success">&lt;12ms</span></td>
-                  <td><strong>94.8%</strong> F1-Score</td>
-                </tr>
-                <tr>
-                  <td><strong>Arrhenius PINN</strong></td>
-                  <td>Physics-Informed Neural Net</td>
-                  <td><span class="badge badge-success">&lt;8ms</span></td>
-                  <td><strong>98.2%</strong> Degradation Acc</td>
-                </tr>
-                <tr>
-                  <td><strong>Bhashini Speech ASR</strong></td>
-                  <td>Conformer-CTC Multi-Dialect</td>
-                  <td><span class="badge badge-info">&lt;120ms</span></td>
-                  <td><strong>92.4%</strong> Word Acc Rate</td>
-                </tr>
-                <tr>
-                  <td><strong>Satellite Shear Inspector</strong></td>
-                  <td>Vision Transformer (ViT-Base)</td>
-                  <td><span class="badge badge-warning">&lt;450ms</span></td>
-                  <td><strong>96.1%</strong> Defect Precision</td>
-                </tr>
-                <tr>
-                  <td><strong>Intermodal Dynamic Router</strong></td>
-                  <td>Dijkstra A* Graph + Reinforcement</td>
-                  <td><span class="badge badge-success">&lt;45ms</span></td>
-                  <td><strong>99.1%</strong> Optimal Route</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+     
+        
+      
 
-        <!-- Arrhenius Kinetic Equation Card -->
-        <div class="glass-card">
-          <div class="card-header-title">
-            <h3>🧪 Physics-Informed Arrhenius Spoilage Equation</h3>
-          </div>
-          <p style="font-size: 0.82rem; color: var(--text-muted);">
-            The mathematical formulation powering real-time agricultural cargo shelf-life prediction in reefer containers:
-          </p>
-          
-          <div class="formula-card-box">
-            <div style="text-align: center; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem; color: #86efac;">
-              k(T, H, v) = A · exp(-E<sub>a</sub> / (R · T)) · (1 + γ · H/100) · (1 + β · v)
-            </div>
-            <hr style="border-color: rgba(255,255,255,0.1); margin: 0.5rem 0;">
-            <div style="font-size: 0.76rem; color: #d1d5db; line-height: 1.5;">
-              <div>• <strong>k(T, H, v)</strong>: Spoilage kinetic rate multiplier</div>
-              <div>• <strong>A</strong>: Product-specific pre-exponential factor (e.g. Lakadong Turmeric)</div>
-              <div>• <strong>E<sub>a</sub></strong>: Bio-chemical activation energy (kJ/mol)</div>
-              <div>• <strong>R</strong>: Universal gas constant (8.314 J/mol·K)</div>
-              <div>• <strong>T</strong>: Sensor telemetry container temperature (Kelvin)</div>
-              <div>• <strong>H</strong>: Relative humidity percentage modifier (γ = 0.35)</div>
-              <div>• <strong>v</strong>: Road vibration frequency spectrum modifier (β = 0.12)</div>
-            </div>
-          </div>
-
-          <div class="feature-highlight-box" style="margin-top: 0.75rem;">
-            <strong style="font-size: 0.8rem; color: var(--accent-terracotta);">💡 Operational Advantage:</strong>
-            <p style="font-size: 0.78rem; margin-top: 0.25rem;">
-              Enables dynamic rerouting *before* produce quality degrades below government public distribution standards, saving up to ₹42 Lakhs per transit batch.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <!-- 12-Month Production Deployment Roadmap -->
-      <div class="glass-card" style="margin-bottom: 1.5rem;">
-        <div class="card-header-title">
-          <h2>🗓️ 12-Month Production Deployment Roadmap</h2>
-          <span class="badge badge-primary">2026 - 2027 Implementation</span>
-        </div>
-
-        <div class="grid-3" style="margin-top: 1rem;">
-          <div class="roadmap-phase-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span class="badge badge-info">Phase 1 (Q1-Q2 2026)</span>
-              <strong style="font-size: 0.75rem; color: var(--text-muted);">Sonapur Corridor</strong>
-            </div>
-            <h4 style="color: var(--accent-forest); margin-bottom: 0.4rem;">Core Platform & Pilot Testing</h4>
-            <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
-              <li>ST-GCN model deployment along NH-27 & NH-44 highway passes.</li>
-              <li>Integration with ULIP VAHAN & FASTag live telemetry stream.</li>
-              <li>Bhashini Voice AI prototype deployment in 5 languages.</li>
-            </ul>
-          </div>
-
-          <div class="roadmap-phase-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span class="badge badge-warning">Phase 2 (Q3-Q4 2026)</span>
-              <strong style="font-size: 0.75rem; color: var(--text-muted);">State-Wide Scale</strong>
-            </div>
-            <h4 style="color: var(--accent-forest); margin-bottom: 0.4rem;">Multi-Modal & Waterway Integration</h4>
-            <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
-              <li>NW-2 Brahmaputra River barge terminal integration at Pandu Port.</li>
-              <li>Delta-CRDT zero-connectivity mobile app for BRO & field officers.</li>
-              <li>Public fund geo-tagging AI validation pipeline for MDoNER.</li>
-            </ul>
-          </div>
-
-          <div class="roadmap-phase-card">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <span class="badge badge-success">Phase 3 (Q1-Q2 2027)</span>
-              <strong style="font-size: 0.75rem; color: var(--text-muted);">BIMSTEC Trade</strong>
-            </div>
-            <h4 style="color: var(--accent-forest); margin-bottom: 0.4rem;">Full NE Region & Cross-Border Expansion</h4>
-            <ul style="font-size: 0.78rem; color: var(--text-muted); padding-left: 1.1rem; line-height: 1.5;">
-              <li>Expansion across all 8 North Eastern States (Assam, Meghalaya, Sikkim, Manipur, Mizoram, Nagaland, Tripura, Arunachal Pradesh).</li>
-              <li>Cross-border trade corridor analytics for BIMSTEC & Kaladan project.</li>
-              <li>Complete 10-language Bhashini NLP voice assistant rollout.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      
 
       <!-- Team ICONIC Engineering Profiles -->
       <div class="glass-card">

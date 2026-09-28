@@ -15,23 +15,18 @@
 
   <header class="top-nav">
     <div class="nav-container">
-      <div class="brand-title">
-        <div class="brand-logo">NE</div>
-        <div class="brand-text">
-          <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
-          <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
-        </div>
-      </div>
-
-      <div class="nav-actions">
-        <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
-        <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
-        <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
-
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
         <div class="three-dots-container">
-          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="More Options">⋮</button>
+          <button class="three-dots-btn" id="three-dots-btn" onclick="toggleThreeDotsMenu(event)" title="Navigation Menu">☰</button>
           <div class="three-dots-dropdown" id="three-dots-dropdown">
-            <div class="dropdown-header">More Pages & Services</div>
+            <div class="dropdown-header">Navigation Modules</div>
+            <a href="index.html" class="dropdown-item">📊 Executive Dashboard</a>
+            <a href="Gis_map.html" class="dropdown-item">🗺️ GIS Map</a>
+            <a href="AI_Route_Optimizer.html" class="dropdown-item active">🧠 AI Route Optimizer</a>
+            <a href="Live_fleet.html" class="dropdown-item">🚛 Live Fleet & ULIP</a>
+            <a href="supply_chain.html" class="dropdown-item">🌾 Supply Chain & Spoilage</a>
+            <a href="Public_fund.html" class="dropdown-item">🏛️ Public Fund Governance</a>
+            <div class="dropdown-header">Services & Account</div>
             <a href="About_us.html" class="dropdown-item">ℹ️ About Us & Services</a>
             <a href="resource.html" class="dropdown-item">📑 Resources & Open Data</a>
             <a href="SOS.html" class="dropdown-item">📞 SOS</a>
@@ -39,17 +34,20 @@
             <a href="Setting.html" class="dropdown-item">⚙️ Setting</a>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="tabs-scroll-wrapper">
-      <div class="tabs-container">
-        <a href="index.html" class="tab-btn">📊 Executive Dashboard</a>
-        <a href="Gis_map.html" class="tab-btn">🗺️ GIS Map</a>
-        <a href="AI_Route_Optimizer.html" class="tab-btn active">🧠 AI Route Optimizer</a>
-        <a href="Live_fleet.html" class="tab-btn">🚛 Live Fleet & ULIP</a>
-        <a href="supply_chain.html" class="tab-btn">🌾 Supply Chain & Spoilage</a>
-        <a href="Public_fund.html" class="tab-btn">🏛️ Public Fund Governance</a>
+        <div class="brand-title">
+          <div class="brand-logo">NE</div>
+          <div class="brand-text">
+            <h1 class="serif-font">NE-AURA <span class="badge badge-success">SIH 26002</span></h1>
+            <p>Smart India Hackathon 2026 · North Eastern Region Logistics & Public Audit</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-actions">
+        <a href="Report_field_incident.html" class="btn btn-outline btn-sm">📝 Report Incident</a>
+        <button class="btn btn-secondary btn-sm" onclick="openDriverModal()">🚗 Driver View</button>
+        <button class="btn btn-danger btn-sm" onclick="toggleLandslideSimulation()">🚨 Trigger Landslide</button>
       </div>
     </div>
   </header>
@@ -168,49 +166,6 @@
               <input type="range" class="range-slider-input" min="0" max="100" value="90" oninput="updateOptimizationWeights()">
             </div>
           </div>
-
-          <!-- Terrain & Climate Disruption Simulator -->
-          <div class="glass-card">
-            <div class="card-header-title">
-              <h3>🎛️ Dynamic Monsoon & Terrain Factor Simulator</h3>
-              <span class="badge badge-info">Interactive Sensitivity Test</span>
-            </div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 1rem;">
-              Adjust environmental factors to test real-time ST-GCN graph risk score fluctuations along Sonapur NH-27 pass.
-            </p>
-
-            <div class="form-group">
-              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <label>🌧️ Rainfall Intensity (mm/hr)</label>
-                <strong id="rainVal" style="color: var(--accent-forest);">85 mm/hr</strong>
-              </div>
-              <input type="range" class="range-slider-input" min="0" max="200" value="85" oninput="updateSimulatorValues()">
-            </div>
-
-            <div class="form-group">
-              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <label>🏔️ Slope Shear Angle Defect</label>
-                <strong id="slopeVal" style="color: var(--accent-terracotta);">48° Angle</strong>
-              </div>
-              <input type="range" class="range-slider-input" min="15" max="65" value="48" oninput="updateSimulatorValues()">
-            </div>
-
-            <div class="form-group">
-              <div style="display: flex; justify-content: space-between; font-size: 0.8rem; margin-bottom: 0.25rem;">
-                <label>🌫️ Mountain Visibility / Fog</label>
-                <strong id="visVal" style="color: var(--accent-terracotta);">120 meters</strong>
-              </div>
-              <input type="range" class="range-slider-input" min="50" max="2000" value="120" oninput="updateSimulatorValues()">
-            </div>
-
-            <div style="background: var(--bg-card-subtle); padding: 0.75rem 1rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-terracotta); display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-              <div>
-                <div style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted);">Calculated Landslide Risk Index</div>
-                <div id="simRiskScore" style="font-size: 1.2rem; font-weight: 800; color: var(--accent-terracotta);">0.84 · CRITICAL THREAT</div>
-              </div>
-              <span class="badge badge-danger">Highway Reroute Mandated</span>
-            </div>
-          </div>
         </div>
 
         <!-- Right: Route Comparison, Elevation Profile & Node Hop Timeline -->
@@ -293,70 +248,10 @@
             </div>
           </div>
 
-          <!-- Mountain Topography & Route Elevation Cross-Section -->
-          <div class="glass-card" style="margin-bottom: 1.5rem;">
-            <div class="card-header-title">
-              <h3>⛰️ Mountain Topography & Altitude Elevation Profile</h3>
-              <span class="badge badge-info">3D GIS Cross-Section</span>
-            </div>
-            <p style="font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem;">
-              Displays altitude changes along the transit route highlighting high-shear slope hazard zones.
-            </p>
+         
 
-            <div class="elevation-chart-container">
-              <div class="elevation-bar-flex">
-                <div class="elevation-col" style="height: 15%;">
-                  <span class="elevation-col-label">Guwahati (55m)</span>
-                </div>
-                <div class="elevation-col river" style="height: 10%;">
-                  <span class="elevation-col-label">Pandu NW-2 (35m)</span>
-                </div>
-                <div class="elevation-col" style="height: 85%;">
-                  <span class="elevation-col-label">Shillong (1,520m)</span>
-                </div>
-                <div class="elevation-col hazard" style="height: 60%;">
-                  <span class="elevation-col-label">⚠️ Sonapur (920m)</span>
-                </div>
-                <div class="elevation-col" style="height: 35%;">
-                  <span class="elevation-col-label">Lumding (145m)</span>
-                </div>
-                <div class="elevation-col" style="height: 20%;">
-                  <span class="elevation-col-label">Silchar (35m)</span>
-                </div>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--text-muted); margin-top: 0.5rem;">
-                <span>0 km (Origin)</span>
-                <span>NW-2 Barge Corridor (140 km)</span>
-                <span>Rail Bypass (160 km)</span>
-                <span>395 km (Dest)</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- ESG Carbon Footprint & Green Logistics Card -->
-          <div class="esg-metric-box" style="margin-bottom: 1.5rem;">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-              <strong style="color: var(--accent-forest); font-size: 0.88rem;" class="serif-font">🌱 ESG Carbon Footprint & Green Freight Impact</strong>
-              <span class="badge badge-success">PM Gati Shakti Compliant</span>
-            </div>
-            <div class="grid-3" style="text-align: center;">
-              <div>
-                <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted);">CO₂ Emissions Abated</div>
-                <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-forest);">1.42 Tons</div>
-                <span style="font-size: 0.68rem; color: #86efac;">-64% vs Pure Trucking</span>
-              </div>
-              <div>
-                <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted);">Diesel Conserved</div>
-                <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-forest);">420 Liters</div>
-                <span style="font-size: 0.68rem; color: #86efac;">Inland Barge Efficiency</span>
-              </div>
-              <div>
-                <div style="font-size: 0.7rem; text-transform: uppercase; color: var(--text-muted);">Green Freight Credit</div>
-                <div style="font-size: 1.4rem; font-weight: 800; color: var(--accent-forest);">85.4 Points</div>
-                <span style="font-size: 0.68rem; color: #86efac;">ISO 14064 Verified</span>
-              </div>
-            </div>
-          </div>
+         
+          
 
           <!-- Step-by-Step GNN Segment Node Hop Timeline -->
           <div class="glass-card" style="margin-bottom: 1.5rem;">
